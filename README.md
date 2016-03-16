@@ -45,7 +45,7 @@ This article was originally posted on [my blog](http://winterbe.com/posts/2014/0
 
 ## Default Methods for Interfaces
 
-Java 8 enables us to add non-abstract method implementations to interfaces by utilizing the `default` keyword. This feature is also known as [virtual extension methods](http://stackoverflow.com/a/24102730). 
+Java 8 允许我们在接口中增加通过 `default` 关键字修饰的非抽象方法。这个特性也被称为 [virtual extension methods](http://stackoverflow.com/a/24102730) (虚拟拓展方法)
 
 Here is our first example:
 
@@ -59,7 +59,7 @@ interface Formula {
 }
 ```
 
-Besides the abstract method `calculate` the interface `Formula` also defines the default method `sqrt`. Concrete classes only have to implement the abstract method `calculate`. The default method `sqrt` can be used out of the box.
+除了抽象方法 `calculate` `Formula` 接口还定义了一个默认方法 `sqrt`。实现类只需要实现抽象方法 `calculate`。默认方法 `sqrt` 可以直接使用。
 
 ```java
 Formula formula = new Formula() {
@@ -73,7 +73,7 @@ formula.calculate(100);     // 100.0
 formula.sqrt(16);           // 4.0
 ```
 
-The formula is implemented as an anonymous object. The code is quite verbose: 6 lines of code for such a simple calculation of `sqrt(a * 100)`. As we'll see in the next section, there's a much nicer way of implementing single method objects in Java 8.
+formula 是实现接口的匿名对象。上面的代码很详细：6行代码实现了一个简单的 `sqrt(a * 100)`计算。在下面的章节里，会有更好的方法在 Java 8 中实现单个方法对象。
 
 
 ## Lambda expressions
@@ -535,7 +535,7 @@ As you can see both code snippets are almost identical but the parallel sort is 
 
 ## Maps
 
-As already mentioned maps do not directly support streams. There's no `stream()` method available on the `Map` interface itself, however you can create specialized streams upon the keys, values or entries of a map via `map.keySet().stream()`, `map.values().stream()` and `map.entrySet().stream()`. 
+As already mentioned maps do not directly support streams. There's no `stream()` method available on the `Map` interface itself, however you can create specialized streams upon the keys, values or entries of a map via `map.keySet().stream()`, `map.values().stream()` and `map.entrySet().stream()`.
 
 Furthermore maps support various new and useful methods for doing common tasks.
 
